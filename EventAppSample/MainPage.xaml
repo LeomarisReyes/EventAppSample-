@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.PrefersStatusBarHidden="True"
+             ios:Page.PreferredStatusBarUpdateAnimation="Fade"
+             xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="EventAppSample.MainPage">
+
+    <ScrollView VerticalScrollBarVisibility="Never">
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,*" BackgroundColor="#F0F1F6">
+            <!-- 1. Main structure-->
+
+            <!-- 1.1 Main Picture -->
+            <PanCake:PancakeView Grid.Row="0" VerticalOptions="Start" IsClippedToBounds="True" CornerRadius="0,0,40,40" HorizontalOptions="FillAndExpand">
+                <Image Source="Model" Aspect="AspectFill" HeightRequest="370"/>
+            </PanCake:PancakeView>
+            <!-- 1.1 Heart -->
+            <Image Grid.Row="0" Source="_Heart" Margin="0,35,20,0" HeightRequest="35" WidthRequest="35" HorizontalOptions="End" VerticalOptions="Start"/>
+
+            <!-- 2. Event Description -->
+
+            <!-- 2.1 Fashion Fair frame 2020-->
+            <Frame Grid.Row="1" BackgroundColor="White" HasShadow="False" Margin="30,-100,30,20" CornerRadius="20" HeightRequest="170">
+               <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,*,*">
+                   <!--Date Information frame-->
+                   <Frame Grid.Row="0" Grid.Column="0" Margin="10,0,15,0" WidthRequest="30" Padding="{OnPlatform Android='8,0',iOS='10,15'}" HasShadow="False" Grid.RowSpan="2" CornerRadius="25" BackgroundColor="#c7e7ff">
+                      <Label VerticalTextAlignment="Center" >
+                           <Label.FormattedText>
+                               <FormattedString>
+                                   <Span Grid.Row="0" Text="20&#10;" FontSize="22" FontAttributes="Bold" TextColor="#fc717a"/>
+                                   <Span Grid.Row="1" Text="Oct." TextColor="#7ba3bf" FontAttributes="Bold" FontSize="14"/>
+                               </FormattedString>
+                           </Label.FormattedText>
+                       </Label>
+                   </Frame>
+                   <!-- Event name-->
+                   <Label Grid.Row="0" Grid.Column="1" FontAttributes="Bold" Text="Fashion Fair 2020" FontSize="21"/>
+                   <Label Grid.Row="1" Grid.Column="1" Text="by LMD" TextColor="#a4a5b0"/>
+                    <!--Time information-->
+                   <Image Grid.Row="2" Grid.Column="0" HorizontalOptions="Start" Source="Clock" Margin="13,0,0,0" HeightRequest="35"/>
+                   <Label Grid.Row="2" Grid.Column="1" VerticalOptions="Center" Margin="-25,0,0,0" Text="11.00am - 10.00pm" FontSize="16" TextColor="#5855b6" FontAttributes="Bold"/>
+                    <!--Location information-->
+                   <Image Grid.Row="3" Grid.Column="0" HorizontalOptions="Start" Source="Location" Margin="13,0,0,0" HeightRequest="35"/>
+                   <Label Grid.Row="3" Grid.Column="1" VerticalOptions="Center" Margin="-25,0,0,0" Text="72 S Linden Ave, San Francisco" FontSize="16" TextColor="#5855b6" FontAttributes="Bold"/>
+                </Grid>
+            </Frame>
+
+            <!-- Details-->
+            <Label Margin="30,0" Grid.Row="2" FontSize="22" Text="Details" FontAttributes="Bold"/>
+            <!-- Description-->
+            <Label Margin="30,0" Grid.Row="3" TextColor="#5f6477" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+            <!-- Read more-->
+            <Label Margin="30,10,30,0" Grid.Row="4" FontSize="17" Text="Read more" TextColor="#5855b6" FontAttributes="Bold"/>
+
+            <!-- Guests-->
+            <Grid Grid.Row="5" ColumnDefinitions="Auto,*,Auto" HeightRequest="80">
+                 <CollectionView Grid.Column="0" WidthRequest="170" HorizontalScrollBarVisibility="Never" 
+                                Margin="20,20,10,0" HorizontalOptions="FillAndExpand"
+                                ItemsSource="{Binding guest}"
+                                VerticalOptions="Start"
+                                ItemsLayout="HorizontalList">
+                                <CollectionView.ItemTemplate>
+                                   <DataTemplate> 
+                                        <Grid ColumnDefinitions="Auto" RowDefinitions="Auto" Padding="{OnPlatform iOS='5,0,-20,0'}">
+                                           <PanCake:PancakeView Grid.Column="0" Grid.Row="0" CornerRadius="28" >
+                                              <Image Source="{Binding Picture}" HeightRequest="56" WidthRequest="56" />
+                                           </PanCake:PancakeView>
+                                        </Grid> 
+                                   </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                   </CollectionView>
+               <Label Margin="10,0,0,0" Grid.Column="1" FontAttributes="Bold" Text="Interested" TextColor="#fe8b87" VerticalTextAlignment="Center"/>
+               <Button Grid.Column="2" HorizontalOptions="End" ImageSource="Arr" HeightRequest="50" WidthRequest="60" CornerRadius="20" BackgroundColor="#dddddd" Margin="0,0,50,10"/> 
+            </Grid>
+
+            <!-- 4. Ticket price-->
+            <PanCake:PancakeView Grid.Row="6"  BackgroundColor="#dddddd" VerticalOptions="EndAndExpand"  CornerRadius="40,40,0,0" HorizontalOptions="FillAndExpand" Margin="{OnPlatform Android='0,30,0,0'}">
+              <StackLayout HeightRequest="100" Orientation="Horizontal">
+                  <Label Margin="30,20" HorizontalOptions="StartAndExpand">
+                      <Label.FormattedText>
+                          <FormattedString>
+                              <Span Text="$59.90&#10;" FontAttributes="Bold" FontSize="25" TextColor="#fe8b87"/>
+                              <Span Text="Per participant" FontSize="15" TextColor="#fe8b87"/>
+                          </FormattedString>
+                      </Label.FormattedText>
+                  </Label>
+                  <Button BackgroundColor="#4c4baa" VerticalOptions="Center" HeightRequest="60" WidthRequest="130" Text="Get a Ticket" FontAttributes="Bold" TextColor="White" CornerRadius="25" Margin="0,0,20,0"/>
+              </StackLayout> 
+            </PanCake:PancakeView> 
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

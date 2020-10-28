@@ -1,0 +1,40 @@
+﻿<Properties StartupConfiguration="{B7D79AD8-617E-4FDD-9336-EDA846C67759}|Default">
+  <MonoDevelop.Ide.ItemProperties.EventAppSample.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" PreferredExecutionTarget="Android.lrr_-_pixel_2" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="EventAppSample/MainPage.xaml">
+    <Files>
+      <File FileName="EventAppSample/MainPage.xaml" Line="93" Column="36" />
+      <File FileName="EventAppSample/ViewModels/GuestViewModel.cs" />
+      <File FileName="EventAppSample/MainPage.xaml.cs" />
+      <File FileName="EventAppSample/Models/Guests.cs" />
+      <File FileName="EventAppSample.iOS/Main.cs" />
+      <File FileName="EventAppSample.Android/MainActivity.cs" />
+      <File FileName="EventAppSample.iOS/Resources/LeomarisReyes.jpg" />
+      <File FileName="EventAppSample.iOS/Resources/Location.png" />
+      <File FileName="EventAppSample.iOS/Resources/Model.jpg" />
+      <File FileName="EventAppSample.iOS/Resources/Model.png" />
+      <File FileName="EventAppSample.iOS/Info.plist" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="EventAppSample" expanded="True" selected="True">
+            <Node name="EventAppSample" expanded="True">
+              <Node name="Models" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+            </Node>
+            <Node name="EventAppSample.iOS" expanded="True">
+              <Node name="Resources" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.EventAppSample.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.19246DB7-ED17-4769-94AD-22BF5FA8FA24" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
